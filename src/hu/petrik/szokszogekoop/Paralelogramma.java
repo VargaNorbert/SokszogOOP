@@ -7,17 +7,29 @@ public class Paralelogramma extends Sokszog{
     public Paralelogramma(){
         super(getVeletlenOldal());
         this.b= getVeletlenOldal();
+        this.alfa= getVeletlenSzog();
 
     }
 
     private static double getVeletlenOldal() {
         return Math.random()*5 + 5;
     }
+    private static double getVeletlenSzog() {
+        return Math.random()*179;
+    }
 
     public Paralelogramma(double a, double alfa,double b) {
         super(a);
         this.alfa = alfa;
         this.b=b;
+    }
+
+    public double getB() {
+        return b;
+    }
+
+    public void setB(double b) {
+        this.b = b;
     }
 
     public double getAlfa() {
@@ -35,6 +47,14 @@ public class Paralelogramma extends Sokszog{
 
     @Override
     public double getTerulet(){
-        return 0;
+
+        double radian= (alfa*180)/Math.PI;
+
+        return super.getA()*this.b*Math.sin(radian);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Téglalap: a = %f - b = %f - alfa = %f - %s",this.getA(),this.getB(),this.alfa,super.toString());
     }
 }

@@ -14,5 +14,17 @@ public class Main {
             System.out.println(new Teglalap(a,b));
 
         }
+
+        Paralelogramma p = new Paralelogramma();
+
+        System.out.println(p);
+        System.out.println(p.getTerulet());
+
+        Sokszogek s = new Sokszogek(10);
+
+        System.out.println(s);
+
+        System.out.println(s.getOsszKerulet());
+
     }
 }
